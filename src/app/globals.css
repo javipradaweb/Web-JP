@@ -1,0 +1,290 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Base */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: inherit; /* no forzar Arial */
+}
+
+/* =========================
+   Navbar links (forced)
+   ========================= */
+.nav-link {
+  position: relative;
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: color 0.25s ease;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #a12995, #00e1f6);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================
+   Web JP Shine Button
+   ========================= */
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.webjp-shine-border {
+  background: conic-gradient(
+    from 0deg,
+    #00F5FF,
+    transparent 12%,
+    transparent 35%,
+    #00F5FF,
+    transparent 55%,
+    transparent 78%,
+    #00F5FF
+  );
+  background-size: 300% 300%;
+  animation: shine 6s ease-out infinite;
+  outline: none;
+}
+
+.webjp-shine-border:focus,
+.webjp-shine-border:focus-visible {
+  outline: none;
+}
+
+/* =========================
+   Glow float blobs
+   ========================= */
+@keyframes floatGlow {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(40px, -30px, 0) scale(1.10); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+.glow-float {
+  will-change: transform;
+  animation: floatGlow 6s ease-in-out infinite !important;
+}
+
+.glow-float.slow {
+  animation-duration: 10s !important;
+}
+
+.glow-float.fast {
+  animation-duration: 4s !important;
+}
+
+/* =========================
+   Dot glow (pill "20+")
+   ========================= */
+@keyframes dotGlowPulse {
+  0%, 100% {
+    opacity: 0.55;
+    box-shadow: 0 0 0px rgba(0, 225, 246, 0);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 16px rgba(0, 225, 246, 0.9);
+    transform: scale(1.08);
+  }
+}
+
+.webjp-dot-glow {
+  background: #00e1f6;
+  animation: dotGlowPulse 1.5s ease-in-out infinite;
+}
+
+/* =========================
+   Trusted strip (full width)
+   ========================= */
+.webjp-trusted-strip {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+  background-color: #020617;
+  background-image:
+    radial-gradient(1200px 220px at 50% 0%, rgba(161, 41, 149, 0.22), rgba(0, 0, 0, 0) 70%),
+    radial-gradient(900px 200px at 85% 40%, rgba(0, 225, 246, 0.10), rgba(0, 0, 0, 0) 70%),
+    linear-gradient(90deg, rgba(88, 28, 135, 0.16), rgba(2, 6, 23, 0) 50%, rgba(88, 28, 135, 0.16));
+}
+
+/* =========================
+   Marquee (trusted by)
+   ========================= */
+@keyframes webjpMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.webjp-marquee {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.webjp-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 2.75rem;
+  padding: 0.35rem 0;
+  animation: webjpMarquee 14s linear infinite;
+}
+
+.webjp-marquee-item {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+}
+
+/* puntito separador */
+.webjp-marquee-item::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  margin-left: 2.75rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.webjp-marquee-item:last-child::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .webjp-marquee-track {
+    animation: none !important;
+  }
+}
+
+/* =========================
+   Services cards: float + border shine
+   ========================= */
+@keyframes webjpCardFloat {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes webjpBorderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.webjp-service-card {
+  animation: webjpCardFloat 6.5s ease-in-out infinite;
+}
+
+.webjp-service-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  padding: 1px;
+  background: conic-gradient(
+    from 180deg,
+    rgba(0, 225, 246, 0.0),
+    rgba(0, 225, 246, 0.55),
+    rgba(161, 41, 149, 0.55),
+    rgba(0, 225, 246, 0.0)
+  );
+  opacity: 0.55;
+  animation: webjpBorderSpin 7s linear infinite;
+  pointer-events: none;
+
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.webjp-service-card:hover::before {
+  opacity: 0.85;
+}
+
+/* =========================
+   Pricing cards: float + border shine
+   ========================= */
+@keyframes webjpPricingFloat {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes webjpPricingBorderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.webjp-pricing-card {
+  animation: webjpPricingFloat 7s ease-in-out infinite;
+}
+
+.webjp-pricing-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  padding: 1px;
+  background: conic-gradient(
+    from 180deg,
+    rgba(0, 225, 246, 0.0),
+    rgba(0, 225, 246, 0.55),
+    rgba(161, 41, 149, 0.55),
+    rgba(0, 225, 246, 0.0)
+  );
+  opacity: 0.45;
+  animation: webjpPricingBorderSpin 8s linear infinite;
+  pointer-events: none;
+
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.webjp-pricing-card:hover::before {
+  opacity: 0.75;
+}
+
+/* Featured pricing = más pop */
+.webjp-pricing-card.featured::before {
+  opacity: 0.7;
+}
