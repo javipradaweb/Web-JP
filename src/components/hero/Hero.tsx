@@ -165,11 +165,12 @@ export default function Hero() {
           </div>
 
           {/* Right: pill alineado a la derecha */}
-          <div className="w-full flex justify-end">
+          {/* Right: pill (mobile centrado, desktop a la derecha) */}
+          <div className="w-full flex justify-center lg:justify-end">
             <div className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3 backdrop-blur-md">
               <span className="h-2.5 w-2.5 rounded-full webjp-dot-glow" />
               <p className="text-sm text-white">
-                <span className="font-semibold">20+</span> proyectos completados
+              <span className="font-semibold">20+</span> proyectos completados
               </p>
             </div>
           </div>
