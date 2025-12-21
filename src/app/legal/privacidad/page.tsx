@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad | Web JP",
@@ -8,6 +10,8 @@ export const metadata: Metadata = {
 export default function PrivacidadPage() {
   return (
     <main className="relative bg-[#020617] text-white">
+      <Navbar />
+
       <section className="pt-28 pb-20">
         <div className="max-w-4xl mx-auto px-6">
           <header className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-7 sm:p-9">
@@ -30,10 +34,14 @@ export default function PrivacidadPage() {
           <div className="mt-8 space-y-6">
             <ArticleCard title="1. Responsable del tratamiento">
               <p>
-                Responsable: <span className="text-white/80">Javier Prada (Web JP)</span>
+                Responsable:{" "}
+                <span className="text-white/80">Javier Prada (Web JP)</span>
                 <br />
                 Email de contacto:{" "}
-                <a className="text-white hover:underline" href="mailto:contacto@webjp.com">
+                <a
+                  className="text-white hover:underline"
+                  href="mailto:contacto@webjp.com"
+                >
                   contacto@webjp.com
                 </a>
               </p>
@@ -42,10 +50,13 @@ export default function PrivacidadPage() {
             <ArticleCard title="2. Datos que recopilamos">
               <ul className="list-disc pl-5 space-y-2 text-white/75">
                 <li>
-                  Datos de contacto (nombre, email, mensaje) si completas el formulario o nos escribes.
+                  Datos de contacto (nombre, email, mensaje) si completas el
+                  formulario o nos escribes.
                 </li>
                 <li>
-                  Datos técnicos básicos (por ejemplo: tipo de dispositivo, navegador, páginas visitadas) a través de cookies/analítica si está habilitada.
+                  Datos técnicos básicos (por ejemplo: tipo de dispositivo,
+                  navegador, páginas visitadas) a través de cookies/analítica si
+                  está habilitada.
                 </li>
               </ul>
             </ArticleCard>
@@ -68,51 +79,64 @@ export default function PrivacidadPage() {
 
             <ArticleCard title="5. Conservación">
               <p className="text-white/75 leading-relaxed">
-                Conservamos tus datos el tiempo necesario para responder y dar seguimiento,
-                o el requerido por obligaciones legales. Luego se eliminan o anonimiza.
+                Conservamos tus datos el tiempo necesario para responder y dar
+                seguimiento, o el requerido por obligaciones legales. Luego se
+                eliminan o anonimiza.
               </p>
             </ArticleCard>
 
             <ArticleCard title="6. Terceros y herramientas">
               <p className="text-white/75 leading-relaxed">
                 Este sitio puede estar alojado en proveedores como Vercel y usar
-                herramientas de analítica (si se habilitan). Estos proveedores pueden
-                procesar datos técnicos necesarios para operar el servicio.
+                herramientas de analítica (si se habilitan). Estos proveedores
+                pueden procesar datos técnicos necesarios para operar el
+                servicio.
               </p>
             </ArticleCard>
 
             <ArticleCard title="7. Tus derechos">
               <p className="text-white/75 leading-relaxed">
-                Puedes solicitar acceso, rectificación o eliminación de tus datos,
-                y retirar tu consentimiento. Escríbenos a{" "}
-                <a className="text-white hover:underline" href="mailto:contacto@webjp.com">
+                Puedes solicitar acceso, rectificación o eliminación de tus
+                datos, y retirar tu consentimiento. Escríbenos a{" "}
+                <a
+                  className="text-white hover:underline"
+                  href="mailto:contacto@webjp.com"
+                >
                   contacto@webjp.com
-                </a>.
+                </a>
+                .
               </p>
             </ArticleCard>
 
             <ArticleCard title="8. Seguridad">
               <p className="text-white/75 leading-relaxed">
-                Aplicamos medidas razonables para proteger la información. Aun así,
-                ningún sistema es 100% infalible.
+                Aplicamos medidas razonables para proteger la información. Aun
+                así, ningún sistema es 100% infalible.
               </p>
             </ArticleCard>
 
             <ArticleCard title="9. Cambios a esta política">
               <p className="text-white/75 leading-relaxed">
-                Podemos actualizar esta política. Publicaremos la versión vigente en esta página.
+                Podemos actualizar esta política. Publicaremos la versión vigente
+                en esta página.
               </p>
             </ArticleCard>
 
             <div className="rounded-2xl border border-white/10 bg-black/20 p-6 text-sm text-white/70">
               Si tienes dudas, escríbenos a{" "}
-              <a className="text-white hover:underline" href="mailto:contacto@webjp.com">
+              <a
+                className="text-white hover:underline"
+                href="mailto:contacto@webjp.com"
+              >
                 contacto@webjp.com
-              </a>.
+              </a>
+              .
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

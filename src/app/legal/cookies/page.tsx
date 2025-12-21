@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Política de Cookies | Web JP",
@@ -8,6 +10,8 @@ export const metadata: Metadata = {
 export default function CookiesPage() {
   return (
     <main className="relative bg-[#020617] text-white">
+      <Navbar />
+
       <section className="pt-28 pb-20">
         <div className="max-w-4xl mx-auto px-6">
           <header className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-7 sm:p-9">
@@ -18,7 +22,8 @@ export default function CookiesPage() {
               Política de Cookies
             </h1>
             <p className="mt-3 text-white/70 leading-relaxed">
-              Explica qué son las cookies, cuáles usamos y cómo puedes gestionarlas.
+              Explica qué son las cookies, cuáles usamos y cómo puedes
+              gestionarlas.
             </p>
             <p className="mt-4 text-xs text-white/50">
               Última actualización:{" "}
@@ -29,54 +34,65 @@ export default function CookiesPage() {
           <div className="mt-8 space-y-6">
             <ArticleCard title="1. ¿Qué son las cookies?">
               <p className="text-white/75 leading-relaxed">
-                Son pequeños archivos que se guardan en tu navegador para recordar
-                información sobre tu visita.
+                Son pequeños archivos que se guardan en tu navegador para
+                recordar información sobre tu visita.
               </p>
             </ArticleCard>
 
             <ArticleCard title="2. Cookies que podríamos usar">
               <ul className="list-disc pl-5 space-y-2 text-white/75">
                 <li>
-                  <span className="text-white/80">Esenciales:</span> necesarias para funcionamiento básico.
+                  <span className="text-white/80">Esenciales:</span> necesarias
+                  para funcionamiento básico.
                 </li>
                 <li>
-                  <span className="text-white/80">Preferencias:</span> guardan ajustes (si existieran).
+                  <span className="text-white/80">Preferencias:</span> guardan
+                  ajustes (si existieran).
                 </li>
                 <li>
-                  <span className="text-white/80">Analítica:</span> para entender visitas y mejorar (si se habilita).
+                  <span className="text-white/80">Analítica:</span> para entender
+                  visitas y mejorar (si se habilita).
                 </li>
               </ul>
             </ArticleCard>
 
             <ArticleCard title="3. Cómo gestionar cookies">
               <p className="text-white/75 leading-relaxed">
-                Puedes bloquear o eliminar cookies desde la configuración de tu navegador.
-                Ten en cuenta que algunas funciones podrían verse afectadas.
+                Puedes bloquear o eliminar cookies desde la configuración de tu
+                navegador. Ten en cuenta que algunas funciones podrían verse
+                afectadas.
               </p>
             </ArticleCard>
 
             <ArticleCard title="4. Herramientas de terceros">
               <p className="text-white/75 leading-relaxed">
-                Si activamos analítica (por ejemplo GA4), podría establecer cookies
-                o identificadores similares para medir uso del sitio.
+                Si activamos analítica (por ejemplo GA4), podría establecer
+                cookies o identificadores similares para medir uso del sitio.
               </p>
             </ArticleCard>
 
             <ArticleCard title="5. Cambios a esta política">
               <p className="text-white/75 leading-relaxed">
-                Podemos actualizar esta política. Publicaremos la versión vigente aquí.
+                Podemos actualizar esta política. Publicaremos la versión vigente
+                aquí.
               </p>
             </ArticleCard>
 
             <div className="rounded-2xl border border-white/10 bg-black/20 p-6 text-sm text-white/70">
               Para consultas, escríbenos a{" "}
-              <a className="text-white hover:underline" href="mailto:contacto@webjp.com">
+              <a
+                className="text-white hover:underline"
+                href="mailto:contacto@webjp.com"
+              >
                 contacto@webjp.com
-              </a>.
+              </a>
+              .
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }
