@@ -11,6 +11,7 @@ const INTERNAL = [
 
 const LEGAL = [
   { name: "Política de Privacidad", url: "/legal/privacidad" },
+  { name: "Política de Cookies", url: "/legal/cookies" },
   { name: "Términos de Servicio", url: "/legal/terminos" },
 ];
 
