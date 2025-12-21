@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 const LINKS = [
   { label: "Servicios", href: "/#servicios" },
+  { label: "Sobre mí", href: "/sobre-mi" },
   { label: "Portafolio", href: "/portafolio" },
   { label: "Precios", href: "/#precios" },
   { label: "Contacto", href: "/#contacto" },
@@ -20,12 +21,11 @@ export default function Navbar() {
     const isHome = pathname === "/";
     return (href: string) => {
       if (href.startsWith("/#")) return isHome ? href : href; // siempre /#... (tu estándar)
-      return href; // /portafolio, etc.
+      return href; // /sobre-mi, /portafolio, etc.
     };
   }, [pathname]);
 
   useEffect(() => {
-    // si cambia ruta, cerramos menú
     setOpen(false);
   }, [pathname]);
 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const INTERNAL = [
   { name: "Servicios", url: "/#servicios" },
+  { name: "Sobre mí", url: "/sobre-mi" },
   { name: "Precios", url: "/#precios" },
   { name: "FAQ", url: "/#faq" },
   { name: "Contacto", url: "/#contacto" },
@@ -42,9 +43,8 @@ export default function Footer() {
 
       <div className="relative border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6">
-          {/* Desktop: 2 columnas (40% / 60%) */}
           <div className="py-12 grid grid-cols-1 lg:grid-cols-[40%_60%] gap-y-10 lg:gap-x-20">
-            {/* Col 1 (Brand) */}
+            {/* Brand */}
             <div className="text-center lg:text-left">
               <img
                 src="/logo2.png"
@@ -58,7 +58,7 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Col 2 (Links) */}
+            {/* Links */}
             <div className="w-full">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:gap-x-20 text-center lg:text-left">
                 {/* Enlaces Rápidos */}
@@ -113,10 +113,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Divider */}
           <div className="h-px w-full bg-white/10" />
 
-          {/* Bottom */}
           <div className="py-6 text-center text-sm text-white/50">
             © 2025 Web JP. All rights reserved.
           </div>
