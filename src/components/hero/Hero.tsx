@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const BRANDS = ["Sajama", "Savia Skincare", "Grupo Jorge Belmonte", "RTP Bolivia", "Wolverine Contractors", "Sinchi Wayra", "Osfim"];
+const BRANDS = ["Sajama", "Savia Skincare", "Grupo Jorge Belmonte", "RTP Bolivia", "Wolverine Contractors", "Grupo Minero Sinchi Wayra", "Osfim"];
 
 function MarqueeRow() {
   return (
@@ -43,7 +43,7 @@ export default function Hero() {
           {/* Left */}
           <div>
             <span className="inline-block mb-6 rounded-full border border-white/20 bg-white/5 px-4 py-1 text-sm backdrop-blur-md">
-              Web JP · Diseño UX/UI + Desarrollo Web
+            Diseño UX/UI + Desarrollo Web
             </span>
 
             <h1 className="text-4xl lg:text-4x1 font-bold leading-tight mb-6">
@@ -156,7 +156,7 @@ export default function Hero() {
                   <div>
                     <p className="text-sm font-semibold text-white">Entrega full-service</p>
                     <p className="mt-1 text-xs text-gray-300 leading-relaxed">
-                      UX/UI + desarrollo web. De 0 a online, listo para escalar.
+                      UX/UI + desarrollo web. De 0 a PRO, listo para escalar.
                     </p>
                   </div>
                 </div>
