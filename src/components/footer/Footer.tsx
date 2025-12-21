@@ -3,21 +3,21 @@
 import { motion } from "framer-motion";
 
 const INTERNAL = [
-  { name: "Servicios", url: "#servicios" },
-  { name: "Precios", url: "#precios" },
-  { name: "FAQ", url: "#faq" },
-  { name: "Contacto", url: "#contacto" },
+  { name: "Servicios", url: "/#servicios" },
+  { name: "Precios", url: "/#precios" },
+  { name: "FAQ", url: "/#faq" },
+  { name: "Contacto", url: "/#contacto" },
 ];
 
 const LEGAL = [
-  { name: "Política de Privacidad", url: "#privacy" },
-  { name: "Términos de Servicio", url: "#terms" },
+  { name: "Política de Privacidad", url: "/legal/privacidad" },
+  { name: "Términos de Servicio", url: "/legal/terminos" },
 ];
 
 const SOCIAL = [
-  { name: "Instagram", url: "#" },
-  { name: "YouTube", url: "#" },
-  { name: "LinkedIn", url: "#" },
+  { name: "Instagram", url: "https://www.instagram.com/javipradaweb/" },
+  { name: "YouTube", url: "https://www.youtube.com/@javipradaweb" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/javipradaweb/" },
 ];
 
 export default function Footer() {
@@ -41,23 +41,30 @@ export default function Footer() {
 
       <div className="relative border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6">
-          {/* ✅ Desktop: 2 columnas (40% / 60%) */}
+          {/* Desktop: 2 columnas (40% / 60%) */}
           <div className="py-12 grid grid-cols-1 lg:grid-cols-[40%_60%] gap-y-10 lg:gap-x-20">
             {/* Col 1 (Brand) */}
-            <div>
-              <img src="/logo2.png" alt="Web JP" className="h-8 w-auto" />
-              <p className="mt-6 text-sm leading-relaxed text-white/65 max-w-[420px]">
-                Diseño UX/UI y desarrollo web para marcas que quieren verse premium y convertir.
-                Experiencias claras, rápidas y orientadas a resultados.
+            <div className="text-center lg:text-left">
+              <img
+                src="/logo2.png"
+                alt="Web JP"
+                className="h-8 w-auto mx-auto lg:mx-0"
+              />
+              <p className="mt-6 text-sm leading-relaxed text-white/65 max-w-[420px] mx-auto lg:mx-0">
+                Diseño UX/UI y desarrollo web para marcas que quieren verse
+                premium y convertir. Experiencias claras, rápidas y orientadas a
+                resultados.
               </p>
             </div>
 
-            {/* Col 2 (Links): grid de 3 columnas iguales, OCUPA TODO el ancho */}
+            {/* Col 2 (Links) */}
             <div className="w-full">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:gap-x-20">
-                {/* 2) Enlaces Rápidos */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:gap-x-20 text-center lg:text-left">
+                {/* Enlaces Rápidos */}
                 <div>
-                  <h3 className="text-white font-semibold mb-5">Enlaces Rápidos</h3>
+                  <h3 className="text-white font-semibold mb-5">
+                    Enlaces Rápidos
+                  </h3>
                   <ul className="space-y-3 text-sm">
                     {INTERNAL.map((l) => (
                       <li key={l.name}>
@@ -69,7 +76,7 @@ export default function Footer() {
                   </ul>
                 </div>
 
-                {/* 3) Legal */}
+                {/* Legal */}
                 <div>
                   <h3 className="text-white font-semibold mb-5">Legal</h3>
                   <ul className="space-y-3 text-sm">
@@ -83,7 +90,7 @@ export default function Footer() {
                   </ul>
                 </div>
 
-                {/* 4) RRSS (queda en el borde derecho del contenedor, sin text-right) */}
+                {/* RRSS */}
                 <div>
                   <h3 className="text-white font-semibold mb-5">RRSS</h3>
                   <ul className="space-y-3 text-sm">
@@ -92,8 +99,8 @@ export default function Footer() {
                         <a
                           href={l.url}
                           className="hover:text-white transition"
-                          target={l.url.startsWith("http") ? "_blank" : undefined}
-                          rel={l.url.startsWith("http") ? "noreferrer" : undefined}
+                          target="_blank"
+                          rel="noreferrer"
                         >
                           {l.name}
                         </a>
