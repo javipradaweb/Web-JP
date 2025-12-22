@@ -24,20 +24,25 @@ export default function Contact() {
 
           <div className="relative p-8 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="text-xs tracking-[0.22em] text-white/80 font-semibold">CONTACT</p>
+              <p className="text-xs tracking-[0.22em] text-white/80 font-semibold">
+                CONTACT
+              </p>
 
               <h2 className="mt-4 text-3xl sm:text-4xl font-bold leading-tight">
                 ¿Listo para convertir tu web en tu mejor vendedor?
               </h2>
 
               <p className="mt-4 text-white/85 leading-relaxed max-w-xl">
-                Cuéntame tu idea y te propongo una solución clara: estructura, UX/UI y desarrollo para que tu web se vea
-                premium y funcione como herramienta comercial.
+                Cuéntame tu idea y te propongo una solución clara: estructura,
+                UX/UI y desarrollo para que tu web se vea premium y funcione
+                como herramienta comercial.
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-4">
                 <a
-                  href="#contacto"
+                  href="https://api.whatsapp.com/send?phone=59168164840&text=Hola,%20deseo%20cotizar%20un%20proyecto,%20mi%20nombre%20es:"
+                  target="_blank"
+                  rel="noreferrer"
                   className="webjp-shine-border rounded-full p-0.5 hover:scale-105 transition duration-300 active:scale-100 inline-flex"
                 >
                   <span className="px-7 text-sm py-2.5 text-white rounded-full font-medium bg-gray-800">
@@ -54,35 +59,54 @@ export default function Contact() {
               </div>
 
               <p className="mt-5 text-xs text-white/60">
-                Respondo rápido. Si ya tienes referencias o un brief, mejor todavía.
+                Respondo rápido. Si ya tienes referencias o un brief, mejor
+                todavía.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-black/20 p-6">
-              <div className="grid grid-cols-1 gap-3">
+              <form className="grid grid-cols-1 gap-3">
                 <input
+                  required
+                  name="nombre"
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/25"
                   placeholder="Tu nombre"
                 />
+
                 <input
+                  required
+                  type="email"
+                  name="email"
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/25"
                   placeholder="Tu email"
                 />
+
+                <input
+                  required
+                  type="tel"
+                  name="celular"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/25"
+                  placeholder="Celular"
+                />
+
                 <textarea
+                  required
+                  name="mensaje"
                   className="min-h-[110px] w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/25"
                   placeholder="Cuéntame qué necesitas…"
                 />
+
                 <button
-                  type="button"
+                  type="submit"
                   className="mt-2 rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-medium text-white hover:bg-white/15 transition"
                 >
                   Enviar mensaje
                 </button>
 
                 <p className="text-[11px] text-white/50">
-                  * Este formulario es visual (luego lo conectamos).
+                  * Todos los campos son OBLIGATORIOS.
                 </p>
-              </div>
+              </form>
             </div>
           </div>
         </motion.div>
