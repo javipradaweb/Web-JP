@@ -21,7 +21,7 @@ const FAQS = [
     a: "Incluye una evaluación previa para entender tu marca, objetivos, público y qué acción quieres que el visitante haga (contactar, comprar, agendar, etc.), y con eso defino la estructura ideal del sitio (secciones, jerarquía y llamados a la acción) para que todo sea claro y convierta. Luego desarrollo el sitio completo con un enfoque moderno y flexible, usando el stack y las herramientas necesarias según tu proyecto, cuidando que se vea premium, funcione perfecto en móvil, cargue rápido, esté preparado para posicionamiento básico, y quede listo para publicarse con sus ajustes finales y una entrega ordenada.",
   },
   {
-    q: "¿Como se hacen los pagos?",
+    q: "¿Cómo se gestionan los costos de los servicios?",
     a: "Generalmente se trabajo con el 50% a momento de la firma de contrato y 50% a la entrega del trabajo, sin embargo, esto podría variar dependiendo del proyecto.",
   },
   {
