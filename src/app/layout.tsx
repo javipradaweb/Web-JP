@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   description: "Sitio web personal de Web JP",
   icons: {
     icon: [
-      { url: "/faviconbl.ico" },
-      { url: "/faviconbl.png", type: "image/png" },
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", type: "image/png" },
     ],
   },
 };
