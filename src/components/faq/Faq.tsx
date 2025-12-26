@@ -50,7 +50,7 @@ const FAQS = [
   },
   {
     q: "¿Puedes ayudarme con dominio y hosting?",
-    a: "Sí. Te asesoro para elegir dominio y hosting según tu proyecto. Si ya tienes hosting, también puedo trabajar sobre tu infraestructura actual o migrar si conviene.",
+    a: "Sí. Puedo proveerte ambos o servicios o bien asesorarte para elegir dominio y hosting según tu proyecto. Si ya tienes hosting, también puedo trabajar sobre tu infraestructura actual o migrar si conviene.",
   },
 ];
 
