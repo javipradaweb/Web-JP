@@ -43,18 +43,18 @@ export default function Hero() {
           {/* Left */}
           <div>
             <span className="inline-block mb-6 rounded-full border border-white/20 bg-white/5 px-4 py-1 text-sm backdrop-blur-md">
-            Diseño UX/UI + Desarrollo Web
+            Tu Web como tu mejor vendedor
             </span>
 
             <h1 className="text-4xl lg:text-4x1 font-bold leading-tight mb-6">
-              Convierte tu web en tu mejor vendedor.
+              Diseño & Desarrollo Web Profesional.
               <br />
-              Diseño UX/UI + Desarrollo Web que vende.
+              Diseño UX/UI y Apps a Medida.
             </h1>
 
             <p className="text-gray-300 max-w-xl mb-10">
-              Diseño UX/UI y desarrollo sitios que se sienten de alto nivel y funcionan como herramienta comercial.
-              Te entrego una web lista para crecer: rápida, escalable y orientada a resultados.
+              Diseño y desarrollo sitios web, experiencias UX/UI y aplicaciones digitales utilizando WordPress y desarrollo a medida. 
+              Creo soluciones rápidas, escalables y enfocadas en conversión para negocios, marcas personales y emprendimientos.
             </p>
 
             {/* Buttons */}
