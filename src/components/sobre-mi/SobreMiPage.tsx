@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import type { ReactNode } from "react";
@@ -114,8 +115,67 @@ const cardIn: Variants = {
    PAGE
 ======================= */
 export default function SobreMiPage() {
+  // ✅ SEO: JSON-LD (Person + WebPage)
+  const jsonLd = useMemo(() => {
+    const url = "https://javierprada.online/sobre-mi";
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": url,
+          url,
+          name: "Sobre mí | Javier Prada",
+          description:
+            "Conoce a Javier Prada: diseño UX/UI y desarrollo web para sitios rápidos, claros y orientados a resultados.",
+          inLanguage: "es",
+          isPartOf: {
+            "@type": "WebSite",
+            "@id": "https://javierprada.online/",
+            url: "https://javierprada.online/",
+            name: "Web JP",
+          },
+        },
+        {
+          "@type": "Person",
+          name: "Javier Prada",
+          url,
+          image: "https://javierprada.online/javier.png",
+          jobTitle: "Diseño UX/UI + Desarrollo Web",
+          sameAs: [
+            "https://www.instagram.com/javipradaweb/",
+            "https://www.linkedin.com/in/javipradaweb/",
+            "https://www.youtube.com/@javipradaweb",
+          ],
+          worksFor: {
+            "@type": "Organization",
+            name: "Web JP",
+            url: "https://javierprada.online/",
+          },
+        },
+      ],
+    };
+  }, []);
+
   return (
     <section className="pt-28 pb-20">
+      {/* ✅ SEO: H1 + texto descriptivo (visualmente ocultos, no cambian tu diseño) */}
+      <h1 className="sr-only">
+        Sobre mí — Javier Prada | Diseño UXUI y Desarrollo Web
+      </h1>
+      <p className="sr-only">
+        Javier Prada (Web JP) trabaja en diseño UX/UI, diseño web profesional y
+        desarrollo web (WordPress/Elementor y desarrollo a medida) con enfoque
+        en performance, SEO y conversión.
+      </p>
+
+      {/* ✅ SEO: JSON-LD */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="max-w-6xl mx-auto px-6">
         {/* BLOQUE SUPERIOR */}
         <div className="relative">
@@ -487,7 +547,13 @@ function InstagramIcon() {
 
 function LinkedInIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
       <circle cx="5.2" cy="5.2" r="2.1" />
       <rect x="3.5" y="9" width="3.4" height="12" rx="1.2" />
       <path d="M10 9h3.2v1.6h.05c.45-.85 1.55-1.85 3.25-1.85 3.45 0 4.08 2.2 4.08 5.05V21h-3.4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21H10V9z" />
