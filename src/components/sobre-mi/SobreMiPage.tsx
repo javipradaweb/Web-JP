@@ -29,6 +29,11 @@ const SOCIALS: Social[] = [
     href: "https://www.youtube.com/@javipradaweb",
     icon: <YouTubeIcon />,
   },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/59168164840",
+    icon: <WhatsAppIcon />,
+  },
 ];
 
 const PROJECTS = [
@@ -115,43 +120,89 @@ const cardIn: Variants = {
    PAGE
 ======================= */
 export default function SobreMiPage() {
-  // ✅ SEO: JSON-LD (Person + WebPage)
+  // ✅ SEO: JSON-LD (Local signals + Person + WebPage)
   const jsonLd = useMemo(() => {
-    const url = "https://javierprada.online/sobre-mi";
+    const pageUrl = "https://javierprada.online/sobre-mi";
+    const siteUrl = "https://javierprada.online/";
     return {
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": siteUrl,
+          url: siteUrl,
+          name: "Web JP",
+          inLanguage: "es",
+        },
+        {
           "@type": "WebPage",
-          "@id": url,
-          url,
+          "@id": pageUrl,
+          url: pageUrl,
           name: "Sobre mí | Javier Prada",
           description:
-            "Conoce a Javier Prada: diseño UX/UI y desarrollo web para sitios rápidos, claros y orientados a resultados.",
+            "Conoce a Javier Prada (Web JP): diseño UX/UI y desarrollo web para sitios rápidos, claros y orientados a resultados. La Paz, Bolivia y remoto (LATAM, USA y Europa).",
           inLanguage: "es",
-          isPartOf: {
-            "@type": "WebSite",
-            "@id": "https://javierprada.online/",
-            url: "https://javierprada.online/",
-            name: "Web JP",
-          },
+          isPartOf: { "@id": siteUrl },
         },
         {
           "@type": "Person",
+          "@id": `${siteUrl}#javier-prada`,
           name: "Javier Prada",
-          url,
+          url: pageUrl,
           image: "https://javierprada.online/javier.png",
           jobTitle: "Diseño UX/UI + Desarrollo Web",
+          description:
+            "Diseñador UX/UI y desarrollador web en La Paz, Bolivia. Trabajo remoto para LATAM, Estados Unidos y Europa.",
+          homeLocation: {
+            "@type": "Place",
+            name: "La Paz, Bolivia",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "La Paz",
+              addressCountry: "BO",
+            },
+          },
+          areaServed: [
+            { "@type": "Country", name: "Bolivia" },
+            { "@type": "AdministrativeArea", name: "Latinoamérica" },
+            { "@type": "Country", name: "United States" },
+            { "@type": "Continent", name: "Europe" },
+          ],
+          knowsAbout: [
+            "Diseño web",
+            "Diseño UX/UI",
+            "Desarrollo web",
+            "WordPress",
+            "Elementor",
+            "Next.js",
+            "React",
+            "SEO",
+            "Performance web",
+            "Landing pages",
+            "Sitios corporativos",
+            "Ecommerce",
+            "Plataformas web",
+          ],
           sameAs: [
             "https://www.instagram.com/javipradaweb/",
             "https://www.linkedin.com/in/javipradaweb/",
             "https://www.youtube.com/@javipradaweb",
+            "https://wa.me/59168164840",
           ],
           worksFor: {
             "@type": "Organization",
             name: "Web JP",
-            url: "https://javierprada.online/",
+            url: siteUrl,
           },
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              contactType: "sales",
+              telephone: "+59168164840",
+              availableLanguage: ["es", "en"],
+              areaServed: ["BO", "LATAM", "US", "EU"],
+            },
+          ],
         },
       ],
     };
@@ -161,12 +212,14 @@ export default function SobreMiPage() {
     <section className="pt-28 pb-20">
       {/* ✅ SEO: H1 + texto descriptivo (visualmente ocultos, no cambian tu diseño) */}
       <h1 className="sr-only">
-        Sobre mí — Javier Prada | Diseño UXUI y Desarrollo Web
+        Sobre mí — Javier Prada | Diseño UXUI y Desarrollo Web en La Paz, Bolivia
+        (remoto LATAM, USA y Europa)
       </h1>
       <p className="sr-only">
         Javier Prada (Web JP) trabaja en diseño UX/UI, diseño web profesional y
-        desarrollo web (WordPress/Elementor y desarrollo a medida) con enfoque
-        en performance, SEO y conversión.
+        desarrollo web (WordPress/Elementor y desarrollo a medida) con enfoque en
+        performance, SEO y conversión. Ubicado en La Paz, Bolivia y disponible
+        para proyectos remotos en Latinoamérica, Estados Unidos y Europa.
       </p>
 
       {/* ✅ SEO: JSON-LD */}
@@ -210,8 +263,11 @@ export default function SobreMiPage() {
                   <p className="text-2xl font-semibold leading-tight">
                     Javier Prada
                   </p>
+
+                  {/* ✅ Visible local signal (solo aquí, discreto) */}
                   <p className="mt-1 text-white/70">
-                    Diseño UX/UI + Desarrollo Web
+                    Diseño UX/UI + Desarrollo Web ·{" "}
+                    <span className="text-white/80">La Paz, Bolivia</span>
                   </p>
 
                   {/* RRSS */}
@@ -325,21 +381,38 @@ export default function SobreMiPage() {
             <motion.div variants={cardIn}>
               <Card title="Contacto" id="contacto">
                 <div className="space-y-2 text-sm text-white/75">
-                  <p>
-                    Email:{" "}
-                    <a
-                      className="text-white hover:underline"
-                      href="mailto:contacto@webjp.com"
-                    >
-                      contacto@webjp.com
-                    </a>
+                <p>
+                  Email:{" "}
+                <a
+                  className="text-white hover:underline"
+                  href="mailto:contacto@webjp.com"
+                >
+                  contacto@webjp.com
+                </a>
+                </p>
+
+                <p>
+                  WhatsApp:{" "}
+                <a
+                  className="text-white hover:underline"
+                  href="https://wa.me/59168164840"
+                  target="_blank"
+                  rel="noreferrer"
+                  >
+                    +591 68164840
+                </a>
                   </p>
-                  <p>WhatsApp: +— (editable)</p>
-                  <p className="text-white/55 text-xs">
-                    *Placeholder: cámbialo por tus datos reales.
-                  </p>
+
+                <p>
+                  Ciudad de residencia:{" "}
+                  <span className="text-white">La Paz, Bolivia</span>
+                </p>
+
+
+                  <p className="text-white/70">Trabajos remotos en LATAM, USA y Europa.</p>
                 </div>
-              </Card>
+            </Card>
+
             </motion.div>
           </motion.div>
 
@@ -570,6 +643,23 @@ function YouTubeIcon() {
         strokeWidth="2"
       />
       <path d="M10 15V9l5 3-5 3Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M20 11.6c0 4.6-3.8 8.4-8.4 8.4-1.4 0-2.8-.3-4.1-1l-3.5 1 1.1-3.4c-.8-1.4-1.2-3-1.2-4.9C3.9 7 7.7 3.2 12.3 3.2S20 7 20 11.6Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.2 8.8c.2-.5.4-.6.7-.6h.6c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5 0 .7l-.4.5c-.1.2-.2.3-.1.5.1.3.5 1 1.1 1.6.6.6 1.3 1 1.6 1.1.2.1.3 0 .5-.1l.5-.4c.2-.2.4-.2.7 0l1.6.7c.3.1.4.3.4.5v.6c0 .3-.1.5-.6.7-.5.2-1.6.5-3.1-.1-1.5-.6-2.6-1.6-3.7-2.7-1.1-1.1-2.1-2.2-2.7-3.7-.6-1.5-.3-2.6-.1-3.1Z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
