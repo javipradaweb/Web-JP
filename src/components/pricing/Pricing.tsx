@@ -23,7 +23,7 @@ type Plan = {
 
 const PLANS: Plan[] = [
   {
-    name: "Plan UX/UI",
+    name: "Diseño UXUI",
     featured: false,
 
     essential: {
@@ -63,7 +63,7 @@ const PLANS: Plan[] = [
   },
 
   {
-    name: "Plan Diseño Web",
+    name: "Diseño Web Pro",
     badge: "Más vendido",
     featured: true,
 
@@ -104,7 +104,7 @@ const PLANS: Plan[] = [
   },
 
   {
-    name: "Plan A Medida",
+    name: "Desarrollo Web a Medida",
     featured: false,
 
     essential: {
@@ -214,12 +214,16 @@ export default function Pricing() {
           </p>
 
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Planes claros, resultados reales.
+            Precios Diseño Web, UXUI y Desarrollo a Medida.
           </h2>
 
           <p className="mt-4 text-white/85 leading-relaxed">
-            Elige Esencial o Full según tu objetivo. Si tu proyecto requiere algo
-            más complejo, lo armamos a medida.
+            Elige Esencial o Full según tu objetivo. Trabajo con{" "}
+            <span className="text-white font-medium">
+              diseño UXUI, diseño web profesional y desarrollo web a medida
+            </span>{" "}
+            para sitios y plataformas. Si tu proyecto requiere algo más complejo,
+            lo armamos a medida.
           </p>
 
           {/* Toggle: Esencial / Full */}
@@ -263,7 +267,6 @@ export default function Pricing() {
         >
           {PLANS.map((p, idx) => {
             const data = p[tier];
-
             const showBadge = Boolean(p.badge);
 
             return (
